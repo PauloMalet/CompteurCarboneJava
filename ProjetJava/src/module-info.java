@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Paul
+ *
+ */
+module ProjetJava {
+}
