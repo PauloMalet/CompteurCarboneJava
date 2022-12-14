@@ -1,6 +1,6 @@
 package consoCarbone;
 
-public abstract class ConsoCarbone implements Comparable{
+public abstract class ConsoCarbone implements Comparable<ConsoCarbone>{
 	public double impact;
 	private static int id;
 	
@@ -25,16 +25,16 @@ public abstract class ConsoCarbone implements Comparable{
 	
 	
 	//Suite
-		
-	public String compareTo(ConsoCarbone CC) {
+	@Override
+	public int compareTo(ConsoCarbone CC) {
 		if (this.getimpact() > CC.getimpact()) {
-			return (this + " a un impact supÃ©rieur Ã  " + CC);
+			return 1;
 		}
 		if (this.getimpact() < CC.getimpact()) {
-			return (CC + " a un impact supÃ©rieur Ã  " + this);
+			return -1;
 		}
 		else {
-			return (this + " et " + CC + " ont le mÃªme impact");
+			return 0;
 		}
 	}
 	

@@ -8,6 +8,14 @@ public class Utilisateur {
 	private consoCarbone.Transport transport;
 	private consoCarbone.ServicesPublics services;	
 	
+	public Utilisateur(consoCarbone.Alimentation alimentation, consoCarbone.BienConso bienConso, consoCarbone.Logement logement, consoCarbone.Transport transport, consoCarbone.ServicesPublics services) {
+		this.alimentation = alimentation;
+		this.bienConso = bienConso;
+		this.logement = logement;
+		this.transport = transport;
+		this.services = services;
+	}
+	
 	private double calculerEmpreinte() {
 		empreinte = alimentation.getimpact() + bienConso.getimpact() + logement.getimpact() + transport.getimpact() + services.getimpact();
 		return empreinte;

@@ -58,7 +58,7 @@ public class Transport extends ConsoCarbone{
 		return amortissement;
 	}
 	
-	public double getimpact() {
+	public double getImpact() {
 		return impact;
 	}
 	
