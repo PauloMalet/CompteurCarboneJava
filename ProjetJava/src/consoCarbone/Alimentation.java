@@ -1,5 +1,6 @@
 package consoCarbone;
 
+
 public class Alimentation extends ConsoCarbone{
 	private double txBoeuf;
 	private double txVege;
