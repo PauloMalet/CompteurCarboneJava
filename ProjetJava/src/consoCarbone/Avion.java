@@ -1,5 +1,6 @@
 package consoCarbone;
 
+
 public class Avion extends ConsoCarbone{
 	
 	private double impact;
@@ -67,7 +68,7 @@ public class Avion extends ConsoCarbone{
 	
 	@Override
 	public String toString() {
-		return "Chaque année, " + distanceAnnee + " kilomètres sont parcourue en classe " + classe + ", et a un impact de " + impact + "tCO2eq";
+		return "Chaque année, " + distanceAnnee + " kilomètres sont parcourue en classe " + classe + ", et a un impact de " + impact + " tCO2eq.";
 	}
 	
 	public static void main(String[] args) {

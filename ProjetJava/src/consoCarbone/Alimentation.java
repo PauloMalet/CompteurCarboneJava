@@ -53,7 +53,7 @@ public class Alimentation extends ConsoCarbone{
 	
 	@Override
 	public String toString() {
-		return "Le taux de repas avec du boeuf est " + gettxBoeuf() +", celui de repas vege est " + gettxVege() + " et l'impact est " + getImpact();
+		return "Le taux de repas avec du boeuf est " + gettxBoeuf() +", celui de repas vege est " + gettxVege() + " et l'impact est " + getimpact() + " tCO2eq.";
 	}
 	
 	public static void main(String[] args) {

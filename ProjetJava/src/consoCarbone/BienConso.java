@@ -1,8 +1,6 @@
 package consoCarbone;
 
 
-
-
 public class BienConso extends ConsoCarbone{
 	private double montant;
 	private double impact;
@@ -36,7 +34,7 @@ public class BienConso extends ConsoCarbone{
 	
 	@Override
 	public String toString() {
-		return "La somme dÃ©pensÃ©e en biens de conso est " + getMontant() + "et son impact est " + getImpact();
+		return "La somme depensee en biens de conso est " + getMontant() + " euros, et son impact est de " + getimpact() + " tCO2eq.";
 	}
 	
 	public static void main(String[] args) {

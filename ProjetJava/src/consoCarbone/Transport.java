@@ -74,7 +74,7 @@ public class Transport extends ConsoCarbone{
 	
 	@Override
 	public String toString() {
-		return "La voiture est de taille " + getTaille() + "la distance parcourue est " + getKilomAnnee() +  "kilomÃ¨tres et l'amortissement est " + getAmortissement() + ". Son impact est " + getImpact();
+		return "La voiture est de taille " + getTaille() + ", la distance parcourue est " + getKilomAnnee() +  " kilometres et l'amortissement se fait sur " + getAmortissement() + " annees. Son impact est de" + getImpact() + " tCO2eq.";
 	}
 	
 	public static void main(String[] args) {

@@ -45,12 +45,12 @@ public class Logement extends ConsoCarbone{
 	}
 	
 	public static void moyenne() {
-		System.out.println("Le logement reprÃ©sente 22% de l'empreinte carbone des franÃ§ais, le chauffage seul comptant pour 63%");
+		System.out.println("Le logement reprÃ©sente 22% de l'empreinte carbone des francais, le chauffage seul comptant pour 63%");
 	}
 	
 	@Override
 	public String toString() {
-		return "La superficie du logement est " + getSuperficie() + ", sa catÃ©gorie Ã©nergÃ©tique est " + getCe() + " et son impact est " + getImpact();
+		return "La superficie du logement est de " + getSuperficie() + " metres carres, sa categorie energetique est " + getCe() + " et son impact est de " + getimpact() + " tCO2eq.";
 	}
 	
 	
