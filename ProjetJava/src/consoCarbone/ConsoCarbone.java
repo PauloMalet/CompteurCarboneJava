@@ -3,6 +3,7 @@ package consoCarbone;
 public abstract class ConsoCarbone implements Comparable<ConsoCarbone>{
 	public double impact;
 	private static int id;
+	static double objectif;
 	
 	//Constructeurs
 	public ConsoCarbone() {
@@ -23,7 +24,6 @@ public abstract class ConsoCarbone implements Comparable<ConsoCarbone>{
 		ConsoCarbone.id = id;
 	}
 	
-	
 	//Suite
 	@Override
 	public int compareTo(ConsoCarbone CC) {
@@ -40,6 +40,10 @@ public abstract class ConsoCarbone implements Comparable<ConsoCarbone>{
 	
 	@Override
 	public abstract String toString();
+	
+	public double getobjectif() {
+		return objectif;
+	}
 	
 	public static void main(String[] args) {
 	}

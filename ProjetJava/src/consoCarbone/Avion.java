@@ -2,10 +2,12 @@ package consoCarbone;
 
 
 public class Avion extends ConsoCarbone{
-	
 	private double impact;
 	private int distanceAnnee;
 	private Classe classe;
+	static double objectif = 0.28;
+	// source : https://www.carbone4.com/myco2-empreinte-moyenne-evolution-methodo
+	// en faisant -33% car il faut limiter nos emissions de CO2
 	
 	
 	public Avion() {
@@ -39,14 +41,14 @@ public class Avion extends ConsoCarbone{
 	/**
 	 * @return the impact
 	 */
-	public double getImpact() {
+	public double getimpact() {
 		return impact;
 	}
 
 	/**
 	 * @param impact the impact to set
 	 */
-	public void setImpact(double impact) {
+	public void setimpact(double impact) {
 		this.impact = impact;
 		calcul();
 	}
@@ -54,21 +56,25 @@ public class Avion extends ConsoCarbone{
 	/**
 	 * @return the classe
 	 */
-	public Classe getClasse() {
+	public Classe getclasse() {
 		return classe;
 	}
 
 	/**
 	 * @param classe the classe to set
 	 */
-	public void setClasse(Classe classe) {
+	public void setclasse(Classe classe) {
 		this.classe = classe;
 		calcul();
 	}
 	
+	public double getobjectif() {
+		return objectif;
+	}
+	
 	@Override
 	public String toString() {
-		return "Chaque année, " + distanceAnnee + " kilomètres sont parcourue en classe " + classe + ", et a un impact de " + impact + " tCO2eq.";
+		return "Chaque année, " + distanceAnnee + " kilomètres sont parcourue en classe " + getclasse() + ", et a un impact de " + getimpact() + " tCO2eq.";
 	}
 	
 	public static void main(String[] args) {

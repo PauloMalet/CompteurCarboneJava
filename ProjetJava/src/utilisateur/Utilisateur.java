@@ -2,30 +2,21 @@ package utilisateur;
 import java.util.ArrayList;
 import java.util.List;
 
-import consoCarbone.Alimentation;
-import consoCarbone.Avion;
-import consoCarbone.BienConso;
-import consoCarbone.CE;
-import consoCarbone.Classe;
-import consoCarbone.ConsoCarbone;
-import consoCarbone.Logement;
-import consoCarbone.ServicesPublics;
-import consoCarbone.Taille;
-import consoCarbone.Transport;
+import consoCarbone.*;
 
 
 public class Utilisateur {
 	private double empreinte;
-	private consoCarbone.Alimentation alimentation;
-	private consoCarbone.BienConso bienConso;
-	private consoCarbone.Logement logement;
-	private consoCarbone.Transport transport;
-	private consoCarbone.ServicesPublics services;	
-	private consoCarbone.Avion avion;
-	List<consoCarbone.ConsoCarbone> conso = new ArrayList<consoCarbone.ConsoCarbone>();
+	private Alimentation alimentation;
+	private BienConso bienConso;
+	private Logement logement;
+	private Transport transport;
+	private ServicesPublics services;	
+	private Avion avion;
+	List<ConsoCarbone> conso = new ArrayList<ConsoCarbone>();
 
 	
-public Utilisateur(consoCarbone.Alimentation alimentation, consoCarbone.BienConso bienConso, consoCarbone.Logement logement, consoCarbone.Transport transport, consoCarbone.ServicesPublics services, consoCarbone.Avion avion) {
+public Utilisateur(Alimentation alimentation, BienConso bienConso, Logement logement, Transport transport, ServicesPublics services, Avion avion) {
 	this.alimentation = alimentation;
 	this.bienConso = bienConso;
 	this.logement = logement;
@@ -50,11 +41,11 @@ public Utilisateur(consoCarbone.Alimentation alimentation, consoCarbone.BienCons
 		System.out.println("Il y a " + alimentation.getimpact() + " tCO2 provenant de l'alimentation, " + bienConso.getimpact() + " tCO2 provenant de la consommation " + logement.getimpact() + " tCO2 provenant du logement, " + transport.getimpact() + " tCO2 provenant du transport, et " + services.getimpact() + " tCO2 provenant des services publics");
 	}
 	
-	private String Ordonner() {
+	private void OrdonnerPresenter() {
 		int taille = conso.size();
-		consoCarbone.ConsoCarbone changement;
+		ConsoCarbone changement;
 		for(int i=0; i < taille; i++){
-		    for (int j=1; j < taille-1; j++) {
+		    for (int j=1; j < taille; j++) {
 		    	if (conso.get(j-1).getimpact() > conso.get(j).getimpact()) {
 		    		changement = conso.get(j-1);
 		    		conso.set(j-1, conso.get(j));
@@ -62,22 +53,30 @@ public Utilisateur(consoCarbone.Alimentation alimentation, consoCarbone.BienCons
 		    	}
 		    }	
 		}
-		return "L'ordre des postes les plus poluants est le suivant :" + conso;
+		System.out.println("Voici les postes d'emission de CO2 en ordre croissant et en tCO2: ");
+		for (int i=0; i < 6; i++) {
+			System.out.println(conso.get(i).getClass().getTypeName().substring(13) + " : " + conso.get(i).getimpact() + " tCO2.");
+		}
+		for (int i=0; i < 6; i++) {
+			if (conso.get(i).getimpact() > conso.get(i).getobjectif()) {
+				System.out.println("Il est possible de réduire ses émissions de CO2 en réduisant ses emissions provenant de " + conso.get(i).getClass().getTypeName().substring(13) + " car l'objectif individuel est de " + conso.get(i).getobjectif() + " tCO2 par an.");
+			}
+		}
 	}
+
+	
+	
 	
 	
 	public static void main(String[] args) {
 		Alimentation alimentation = new Alimentation(0.1, 0.5);
 		BienConso bienConso = new BienConso(1000);
 		Logement logement = new Logement(100, CE.B);
-		Transport transport = new Transport(true, Taille.P, 10000, 10);
+		Transport transport = new Transport(true, Taille.P, 5000, 15);
 		ServicesPublics services = new ServicesPublics();
 		Avion avion = new Avion(5000, Classe.Eco);
 		Utilisateur U1 = new Utilisateur(alimentation, bienConso, logement, transport, services, avion);
-		System.out.println(U1.conso.get(1));
-		System.out.println(U1.alimentation);
-		System.out.println(U1.Ordonner());
-		System.out.println(U1.conso.get(1));
+		U1.OrdonnerPresenter();
 	}
 
 }

@@ -6,6 +6,9 @@ public class Transport extends ConsoCarbone{
 	private int kilomAnnee;
 	private int amortissement;
 	private double impact;
+	static double objectif = 1.34;
+	// source : https://www.carbone4.com/myco2-empreinte-moyenne-evolution-methodo
+	// en faisant -33% car il faut limiter nos emissions de CO2
 	
 	//Suite
 	public Transport() {
@@ -42,24 +45,29 @@ public class Transport extends ConsoCarbone{
 		calcul();
 	}
 	
-	public boolean getPossede() {
+	public boolean getpossede() {
 		return possede;
 	}
 	
-	public Taille getTaille() {
+	public Taille gettaille() {
 		return taille;
 	}
 
-	public int getKilomAnnee() {
+	public int getkilomAnnee() {
 		return kilomAnnee;
 	}
 	
-	public int getAmortissement() {
+	public int getamortissement() {
 		return amortissement;
 	}
 	
-	public double getImpact() {
+	public double getimpact() {
 		return impact;
+	}
+	
+	@Override
+	public double getobjectif() {
+		return objectif;
 	}
 	
 	//Suite
@@ -74,7 +82,7 @@ public class Transport extends ConsoCarbone{
 	
 	@Override
 	public String toString() {
-		return "La voiture est de taille " + getTaille() + ", la distance parcourue est " + getKilomAnnee() +  " kilometres et l'amortissement se fait sur " + getAmortissement() + " annees. Son impact est de" + getImpact() + " tCO2eq.";
+		return "La voiture est de taille " + gettaille() + ", la distance parcourue est " + getkilomAnnee() +  " kilometres et l'amortissement se fait sur " + getamortissement() + " annees. Son impact est de " + getimpact() + " tCO2eq.";
 	}
 	
 	public static void main(String[] args) {

@@ -5,6 +5,9 @@ public class Alimentation extends ConsoCarbone{
 	private double txBoeuf;
 	private double txVege;
 	private double impact;
+	static double objectif = 1.55;
+	// source : https://www.carbone4.com/myco2-empreinte-moyenne-evolution-methodo
+	// en faisant -33% car il faut limiter nos emissions de CO2
 	
 	//Constructeurs
 	public Alimentation() {
@@ -40,6 +43,10 @@ public class Alimentation extends ConsoCarbone{
 		calcul();
 	}
 
+	public double getobjectif() {
+		return objectif;
+	}
+	
 	//Suite
 	private void calcul(){
 		if (txVege != -1 && txBoeuf != -1) {

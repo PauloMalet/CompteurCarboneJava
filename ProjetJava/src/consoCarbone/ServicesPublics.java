@@ -2,14 +2,18 @@ package consoCarbone;
 
 
 public class ServicesPublics  extends ConsoCarbone{
-	
 	private double impact = 1.5;
+	static double objectif = 1;
 	
 	public ServicesPublics() {
 	}
 	
 	public double getimpact() {
 		return impact;
+	}
+	
+	public double getobjectif() {
+		return objectif;
 	}
 	
 	@Override
