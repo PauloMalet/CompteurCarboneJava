@@ -43,10 +43,7 @@ public class Alimentation extends ConsoCarbone{
 		calcul();
 	}
 
-	public double getobjectif() {
-		return objectif;
-	}
-	
+
 	//Suite
 	private void calcul(){
 		if (txVege != -1 && txBoeuf != -1) {

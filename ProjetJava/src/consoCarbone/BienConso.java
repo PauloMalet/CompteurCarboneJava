@@ -30,9 +30,6 @@ public class BienConso extends ConsoCarbone{
 		return impact;
 	}
 	
-	public double getobjectif() {
-		return objectif;
-	}
 	
 	//Suite
 	private void calcul() {

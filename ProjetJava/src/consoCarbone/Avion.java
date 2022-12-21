@@ -68,9 +68,6 @@ public class Avion extends ConsoCarbone{
 		calcul();
 	}
 	
-	public double getobjectif() {
-		return objectif;
-	}
 	
 	@Override
 	public String toString() {

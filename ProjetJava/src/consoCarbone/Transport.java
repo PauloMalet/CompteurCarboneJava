@@ -65,11 +65,7 @@ public class Transport extends ConsoCarbone{
 		return impact;
 	}
 	
-	@Override
-	public double getobjectif() {
-		return objectif;
-	}
-	
+
 	//Suite
 	private void calcul() {
 		if (possede == false) 

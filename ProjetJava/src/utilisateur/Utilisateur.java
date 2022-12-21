@@ -4,7 +4,6 @@ import java.util.List;
 
 import consoCarbone.*;
 
-
 public class Utilisateur {
 	private double empreinte;
 	private Alimentation alimentation;
@@ -64,7 +63,6 @@ public Utilisateur(Alimentation alimentation, BienConso bienConso, Logement loge
 		}
 	}
 
-	
 	
 	
 	

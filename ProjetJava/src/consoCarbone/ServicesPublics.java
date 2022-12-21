@@ -12,9 +12,6 @@ public class ServicesPublics  extends ConsoCarbone{
 		return impact;
 	}
 	
-	public double getobjectif() {
-		return objectif;
-	}
 	
 	@Override
 	public String toString() {
