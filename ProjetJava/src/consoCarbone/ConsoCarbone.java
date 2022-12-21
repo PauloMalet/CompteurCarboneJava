@@ -10,7 +10,8 @@ public abstract class ConsoCarbone implements Comparable<ConsoCarbone>{
 	public double impact;
 	private static int id;
 	/**
-	 * objectif de consommation carbone (en TCO2eq)permettant de limiter nos emissions de CO2
+	 * objectif de consommation carbone (en TCO2eq)permettant 
+	 * de limiter nos emissions de CO2
 	 */
 	static double objectif;
 	
