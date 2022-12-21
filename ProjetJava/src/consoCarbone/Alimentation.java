@@ -34,7 +34,7 @@ public class Alimentation extends ConsoCarbone{
 	//Getters et setters
 	/**
 	 * 
-	 * @return txBoeuf 
+	 * @return txBoeuf le taux de repas à base de boeuf 
 	 */
 	public double gettxBoeuf() {
 		return txBoeuf;
@@ -42,7 +42,7 @@ public class Alimentation extends ConsoCarbone{
 	
 	/**
 	 * 
-	 * @return txVege
+	 * @return txVege le taux de repas végétariens
 	 */
 	public double gettxVege() {
 		return txVege;
@@ -50,7 +50,7 @@ public class Alimentation extends ConsoCarbone{
 	
 	/**
 	 * 
-	 * @return impact
+	 * @return impact l'impact(en tonne d'emission de CO2) de son alimentation
 	 */
 	public double getimpact() {
 		return impact;
