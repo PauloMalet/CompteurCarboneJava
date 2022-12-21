@@ -1,5 +1,8 @@
 package consoCarbone;
-
+/** 
+ * Cette classe permet de calculer l'impact d’émissions de Gaz à Effet de Serre en Tonne de CO2 
+ * lié à ses achats en fonction du montant dépensé
+ */
 
 public class BienConso extends ConsoCarbone{
 	private double montant;
@@ -9,23 +12,42 @@ public class BienConso extends ConsoCarbone{
 	// en faisant -33% car il faut limiter nos emissions de CO2
 	
 	//Constructeurs
+	/**
+	 * constructeur vide
+	 */
 	public BienConso() {}
 	
+	/**
+	 * constructeur
+	 * @param montant le montant des dépenses par an de l’utilisateur.rice
+	 */
 	public BienConso(double montant) {
 		this.montant = montant;
 		calcul();
 	}
 	
 	//Getters et setters
+	/**
+	 * 
+	 * @return montant le montant des dépenses annuelles de l’utilisateur.rice
+	 */
 	public double getMontant() {
 		return montant;
 	}
 	
+	/**
+	 * 
+	 * @param montant le montant des dépenses annuelles de l’utilisateur.rice
+	 */
 	public void setMontant(double montant) {
 		this.montant = montant;
 		calcul();
 	}
 	
+	/**
+	 * 
+	 * @return impact l'impact des dépenses annuelles de l’utilisateur.rice (en tonne de CO2eq)
+	 */
 	public double getimpact() {
 		return impact;
 	}
