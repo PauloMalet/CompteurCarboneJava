@@ -7,6 +7,9 @@ package consoCarbone;
 public class BienConso extends ConsoCarbone{
 	private double montant;
 	private double impact;
+	/**
+	 * objectif de consommation carbone en terme de depenses (en TCO2eq)permettant de limiter nos emissions de CO2
+	 */
 	static double objectif = 1;
 	// source : https://www.carbone4.com/myco2-empreinte-moyenne-evolution-methodo
 	// en faisant -33% car il faut limiter nos emissions de CO2
