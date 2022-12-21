@@ -78,10 +78,6 @@ public class Alimentation extends ConsoCarbone{
 
 
 	//Suite
-	/** 
-	 * Cette methode calcule l'impact(en tonne d'emission de CO2) de son alimentation à
-	 *  l'aide de la formule ( 8 × txBoeuf + 1.6 × (1 − txVege − txBoeuf) + 0.9 × txVege) 
-	 */
 	private void calcul(){
 		if (txVege != -1 && txBoeuf != -1) {
 			this.impact = 8* txBoeuf + 1.6 * (1-txVege-txBoeuf) + 0.9 * txVege;
