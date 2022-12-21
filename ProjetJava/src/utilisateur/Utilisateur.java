@@ -4,6 +4,10 @@ import java.util.List;
 
 import consoCarbone.*;
 
+/**
+ * Cette classe correspond aux utilisateurs et elle posséde chaque poste de 
+ * consommation(Alimentation, Transport,...) correspondant à chaque utilisateur
+ */
 public class Utilisateur {
 	private double empreinte;
 	private Alimentation alimentation;
@@ -12,9 +16,20 @@ public class Utilisateur {
 	private Transport transport;
 	private ServicesPublics services;	
 	private Avion avion;
+	/**
+	 * Liste contenant pour chaque utilisateur ses différentes consommations carbones
+	 */
 	List<ConsoCarbone> conso = new ArrayList<ConsoCarbone>();
 
-	
+	/**
+	 * constructeur
+	 * @param alimentation le poste de consommation carbone de l’utilisateur.rice lié à son alimentation.
+	 * @param bienConso le poste de consommation carbone de l’utilisateur.rice concernant ses dépenses en biens de consommation
+	 * @param logement le poste de consommation carbone de l’utilisateur.rice concernant son logement
+	 * @param transport le poste de consommation carbone de l’utilisateur.rice concernant ses déplacements
+	 * @param services le poste de consommation carbone de l’utilisateur.rice concernant son utilisation des services publics
+	 * ces différents postes de consommation sont ajoutés à la liste conso
+	 */
 public Utilisateur(Alimentation alimentation, BienConso bienConso, Logement logement, Transport transport, ServicesPublics services, Avion avion) {
 	this.alimentation = alimentation;
 	this.bienConso = bienConso;
