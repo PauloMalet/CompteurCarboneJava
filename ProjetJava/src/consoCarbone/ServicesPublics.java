@@ -22,6 +22,14 @@ public class ServicesPublics  extends ConsoCarbone{
 	
 	/**
 	 * 
+	 * @return objectif l'objectif d'impact CO2 pour cette catégorie 
+	 */
+	public double getobjectif() {
+		return objectif;
+	}
+	
+	/**
+	 * 
 	 * @return impact impact(en tonnes de gaz à effet de serre CO2) lié aux services publics 
 	 */
 	public double getimpact() {

@@ -35,6 +35,15 @@ public class Alimentation extends ConsoCarbone{
 	}
 	
 	//Getters et setters
+	
+	/**
+	 * 
+	 * @return objectif l'objectif d'impact CO2 pour cette catégorie 
+	 */
+	public double getobjectif() {
+		return objectif;
+	}
+	
 	/**
 	 * 
 	 * @return txBoeuf le taux de repas à base de boeuf 

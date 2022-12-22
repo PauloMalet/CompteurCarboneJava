@@ -30,6 +30,15 @@ public class BienConso extends ConsoCarbone{
 	}
 	
 	//Getters et setters
+	
+	/**
+	 * 
+	 * @return objectif l'objectif d'impact CO2 pour cette catégorie 
+	 */
+	public double getobjectif() {
+		return objectif;
+	}
+	
 	/**
 	 * 
 	 * @return montant le montant des dépenses annuelles de l’utilisateur.rice
