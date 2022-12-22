@@ -146,6 +146,7 @@ public class Transport extends ConsoCarbone{
 	}
 	
 	public static void main(String[] args) {
+		//Tests
 		Transport T1 = new Transport(true, Taille.P, 10000, 10);
 		System.out.println(T1.impact);
 	}

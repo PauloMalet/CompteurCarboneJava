@@ -20,7 +20,6 @@ public class Alimentation extends ConsoCarbone{
         * constructeur par défaut
         */
 	public Alimentation() {
-		this(-1,-1); 
 	}
 	
 	/**
@@ -29,6 +28,12 @@ public class Alimentation extends ConsoCarbone{
 	 * @param txVege
 	 */
 	public Alimentation(double txBoeuf, double txVege) {
+		if (txBoeuf <= 0 || txBoeuf >= 1) {
+			throw new IllegalArgumentException("Le taux de repas à base de boeuf doit être compris entre 0 et 1");
+		}
+		if (txVege <= 0 || txVege >= 1) {
+			throw new IllegalArgumentException("Le taux de repas vegetariens doit être compris entre 0 et 1");
+		}
 		this.txBoeuf = txBoeuf;
 		this.txVege = txVege;
 		calcul();
@@ -74,6 +79,9 @@ public class Alimentation extends ConsoCarbone{
 	 * txBoeuf doit être compris entre 0 et 1
 	 */
 	public void settxBoeuf(double txBoeuf) {
+		if (txBoeuf <= 0 || txBoeuf >= 1) {
+			throw new IllegalArgumentException("Le taux de repas à base de boeuf doit être compris entre 0 et 1");
+		}
 		this.txBoeuf = txBoeuf;
 		calcul();
 	}
@@ -84,6 +92,9 @@ public class Alimentation extends ConsoCarbone{
 	 *txVege doit être compris entre 0 et 1
 	 */
 	public void settxVege(double txVege) {
+		if (txVege <= 0 || txVege >= 1) {
+			throw new IllegalArgumentException("Le taux de repas vegetariens doit être compris entre 0 et 1");
+		}
 		this.txVege = txVege;
 		calcul();
 	}
@@ -91,9 +102,7 @@ public class Alimentation extends ConsoCarbone{
 
 	//Suite
 	private void calcul(){
-		if (txVege != -1 && txBoeuf != -1) {
-			this.impact = 8* txBoeuf + 1.6 * (1-txVege-txBoeuf) + 0.9 * txVege;
-		}
+		this.impact = 8* txBoeuf + 1.6 * (1-txVege-txBoeuf) + 0.9 * txVege;
 	}
 	
 	/**
@@ -109,8 +118,9 @@ public class Alimentation extends ConsoCarbone{
 	}
 	
 	public static void main(String[] args) {
+		//Tests
 		moyenne();
-		Alimentation A1 = new Alimentation(1, 0);
+		Alimentation A1 = new Alimentation(0.8, 0.2);
 		Alimentation A2 = new Alimentation();
 		A2.settxBoeuf(0.1);
 		A2.settxVege(0.5);

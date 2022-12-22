@@ -100,6 +100,7 @@ public class Avion extends ConsoCarbone{
 	}
 	
 	public static void main(String[] args) {
+		//Tests
 		Avion A1 = new Avion(10000, Classe.Business);
 		System.out.println(A1.impact);
 	}

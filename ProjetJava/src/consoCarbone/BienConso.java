@@ -76,6 +76,7 @@ public class BienConso extends ConsoCarbone{
 	}
 	
 	public static void main(String[] args) {
+		//Tests
 		BienConso BC1 = new BienConso(1000);
 		System.out.println(BC1.impact);
 	}

@@ -106,6 +106,7 @@ public class Logement extends ConsoCarbone{
 	
 	
 	public static void main(String[] args) {
+		//Tests
 		Logement l1 = new Logement(100, CE.B);
 		Logement l2 = new Logement();
 		l2.setSuperficie(100);

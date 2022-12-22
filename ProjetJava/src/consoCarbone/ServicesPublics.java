@@ -43,6 +43,7 @@ public class ServicesPublics  extends ConsoCarbone{
 	}
 	
 	public static void main(String[] args) {
+		//Tests
 		ServicesPublics SP = new ServicesPublics();
 		System.out.println(SP.getimpact());
 	}

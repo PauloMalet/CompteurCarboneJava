@@ -1,0 +1,7 @@
+
+/**
+ * Ce package utilisateur regroupe par utilisateur ses postes de consommation carbone 
+ * et permet de calculer son impact total
+ */
+
+package utilisateur;

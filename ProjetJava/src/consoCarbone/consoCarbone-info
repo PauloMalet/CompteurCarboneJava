@@ -1,0 +1,7 @@
+
+/**
+ * Ce package ConsoCarbone regroupe les classes des différents poste 
+ * de consommation carbone(Alimentation, Transport,...) et calcule les impacts
+ */
+
+package consoCarbone;
