@@ -1,4 +1,5 @@
 package utilisateur;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -94,7 +95,7 @@ public Utilisateur(Alimentation alimentation, BienConso bienConso, List<Logement
 	
 	
 	public static void main(String[] args) {
-		
+		/*
 		ServicesPublics services = new ServicesPublics();		
 		
 		//Crer scanner
@@ -156,9 +157,26 @@ public Utilisateur(Alimentation alimentation, BienConso bienConso, List<Logement
 		Avion avion = new Avion(distance, classe);
 		
 		//Calculs finaux
+		
 		Utilisateur U1 = new Utilisateur(alimentation, bienConso, logement, transport, services, avion);
 		U1.OrdonnerPresenter();
-	
+		*/
+		
+		
+		
+		char[] array = new char[100];
+		try {
+			FileReader input = new FileReader("C:\\Users\\Paul\\git\\ProjetJava\\ProjetJava\\src\\utilisateur.txt");
+			input.read(array);
+		    System.out.println("Data in the file: ");
+		    System.out.println(array);
+			input.close();
+		}
+		
+		catch(Exception e) {
+			System.out.println("cela ne marche pas");
+			e.getStackTrace();
+		}
 	}
 
 }
