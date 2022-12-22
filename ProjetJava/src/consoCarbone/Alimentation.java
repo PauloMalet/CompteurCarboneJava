@@ -91,7 +91,7 @@ public class Alimentation extends ConsoCarbone{
 	 * Methode statique qui affiche l’empreinte carbone moyenne d’un.e français.e vis à vis de l'alimentation
 	 */
 	public static void moyenne() {
-		System.out.println("19,5% de l'empreinte carbone des FranÃ§ais provient de l'alimentation, avec 49% pour la viande seule");
+		System.out.println("19,5% de l'empreinte carbone des Francais provient de l'alimentation, avec 49% pour la viande seule");
 	}
 	
 	@Override
