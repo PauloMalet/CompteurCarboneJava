@@ -49,7 +49,7 @@ public Utilisateur(Alimentation alimentation, BienConso bienConso, List<Logement
 	}
 	
 	private double calculerEmpreinte() {
-		empreinte = alimentation.getimpact() + bienConso.getimpact() + services.getimpact();
+		empreinte = alimentation.getimpact() + bienConso.getimpact() + services.getimpact() + avion.getimpact();
 		for (Logement e: logement) empreinte += + e.getimpact();
 		for (Transport e: transport) empreinte += + e.getimpact();		
 		return empreinte;
@@ -148,13 +148,23 @@ public Utilisateur(Alimentation alimentation, BienConso bienConso, List<Logement
 		}
 		
 		//Avion
+		Avion avion = new Avion();
 		System.out.println("Entrer la distance parcourue en avion : ");
 		int distance = scan.nextInt();
-		System.out.println("Entrer la classe (Eco, Business ou Premiere) : ");
-		String c = scan.next();
-		Classe classe = Classe.valueOf(c);
+
+		if (distance > 0) {
+			System.out.println("Entrer la classe (Eco, Business ou Premiere) : ");
+			String c = scan.next();
+			Classe classe = Classe.valueOf(c);
+			avion.setDistance(distance);
+			avion.setclasse(classe);
+		}
 		
-		Avion avion = new Avion(distance, classe);
+		
+		else {
+			avion.setDistance(distance);
+			avion.setclasse(Classe.Eco);
+		}
 		
 		//Calculs finaux
 		

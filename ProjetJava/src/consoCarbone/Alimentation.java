@@ -28,10 +28,10 @@ public class Alimentation extends ConsoCarbone{
 	 * @param txVege
 	 */
 	public Alimentation(double txBoeuf, double txVege) {
-		if (txBoeuf <= 0 || txBoeuf >= 1) {
+		if (txBoeuf < 0 || txBoeuf > 1) {
 			throw new IllegalArgumentException("Le taux de repas à base de boeuf doit être compris entre 0 et 1");
 		}
-		if (txVege <= 0 || txVege >= 1) {
+		if (txVege < 0 || txVege > 1) {
 			throw new IllegalArgumentException("Le taux de repas vegetariens doit être compris entre 0 et 1");
 		}
 		this.txBoeuf = txBoeuf;
@@ -79,7 +79,7 @@ public class Alimentation extends ConsoCarbone{
 	 * txBoeuf doit être compris entre 0 et 1
 	 */
 	public void settxBoeuf(double txBoeuf) {
-		if (txBoeuf <= 0 || txBoeuf >= 1) {
+		if (txBoeuf < 0 || txBoeuf > 1) {
 			throw new IllegalArgumentException("Le taux de repas à base de boeuf doit être compris entre 0 et 1");
 		}
 		this.txBoeuf = txBoeuf;
@@ -92,7 +92,7 @@ public class Alimentation extends ConsoCarbone{
 	 *txVege doit être compris entre 0 et 1
 	 */
 	public void settxVege(double txVege) {
-		if (txVege <= 0 || txVege >= 1) {
+		if (txVege < 0 || txVege > 1) {
 			throw new IllegalArgumentException("Le taux de repas vegetariens doit être compris entre 0 et 1");
 		}
 		this.txVege = txVege;

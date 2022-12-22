@@ -8,7 +8,7 @@ package consoCarbone;
 public class Avion extends ConsoCarbone{
 	private double impact;
 	private int distanceAnnee;
-	private Classe classe;
+	private Classe classe = Classe.Eco;
 	/**
 	 * objectif de consommation carbone en terme de deplacement en avion (en TCO2eq)permettant de limiter nos emissions de CO2
 	 */
