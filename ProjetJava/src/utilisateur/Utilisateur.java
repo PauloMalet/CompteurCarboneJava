@@ -1,6 +1,7 @@
 package utilisateur;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import consoCarbone.*;
 
@@ -17,7 +18,7 @@ public class Utilisateur {
 	private ServicesPublics services;	
 	private Avion avion;
 	/**
-	 * Liste contenant pour chaque utilisateur ses différentes consommations carbones
+	 * Liste contenant pour chaque utilisateur ses différentes consommations carbone
 	 */
 	List<ConsoCarbone> conso = new ArrayList<ConsoCarbone>();
 
@@ -66,6 +67,7 @@ public Utilisateur(Alimentation alimentation, BienConso bienConso, List<Logement
 	}
 	
 	private void OrdonnerPresenter() {
+		System.out.println("Votre emission totale de CO2 est de " + empreinte + " tonnes");
 		int taille = conso.size();
 		ConsoCarbone changement;
 		for(int i=0; i < taille; i++){
@@ -92,22 +94,71 @@ public Utilisateur(Alimentation alimentation, BienConso bienConso, List<Logement
 	
 	
 	public static void main(String[] args) {
-		Alimentation alimentation = new Alimentation(0.1, 0.5);
-		BienConso bienConso = new BienConso(1000);
-		Logement logement1 = new Logement(100, CE.B);
-		Logement logement2 = new Logement(150, CE.C);
+		
+		ServicesPublics services = new ServicesPublics();		
+		
+		//Crer scanner
+		Scanner scan = new Scanner(System.in);
+		
+		//Alimentation
+		System.out.println("Entrer le taux de repas contenant du boeuf : ");
+		Double txboeuf = scan.nextDouble();
+		System.out.println("Entrer le taux de repas vegetarien : ");
+		Double txvege = scan.nextDouble();
+		
+		Alimentation alimentation = new Alimentation(txboeuf, txvege);
+		
+		//BienConso
+		System.out.println("Entrer la somme dépensée en biens de consommation : ");
+		Double montant = scan.nextDouble();
+		
+		BienConso bienConso = new BienConso(montant);
+		
+		//Logement
+		System.out.println("Entrer le nombre de logements que vous avez : ");
+		int nombre = scan.nextInt();
+		
 		List<Logement> logement = new ArrayList<Logement>();
-		logement.add(logement1);
-		logement.add(logement2);
-		Transport transport1 = new Transport(true, Taille.P, 5000, 15);
-		Transport transport2 = new Transport(true, Taille.G, 5000, 10);
+		for (int i = 0; i < nombre; i++) {
+			System.out.println("Entrer la surface du logement : ");
+			int surface = scan.nextInt();
+			System.out.println("Entrer la categorie energetique du logement : ");
+			String a = scan.next();
+			CE ce = CE.valueOf(a);
+			Logement logement1 = new Logement(surface, ce);
+			logement.add(logement1);
+		}
+		
+		//Transport
+		System.out.println("Entrer le nombre de voitures que vous avez : ");
+		int nombre2 = scan.nextInt();
+		
 		List<Transport> transport = new ArrayList<Transport>();
-		transport.add(transport1);
-		transport.add(transport2);
-		ServicesPublics services = new ServicesPublics();
-		Avion avion = new Avion(5000, Classe.Eco);
+		for (int i = 0; i < nombre2; i++) {
+			System.out.println("Entrer la taille de la voiture (P ou G) : ");
+			String b = scan.next();
+			Taille taille = Taille.valueOf(b);
+			System.out.println("Entrer la distance parcourue chaque annee : ");
+			int kilomAnnee = scan.nextInt();
+			System.out.println("Entrer le temps d'amortissement du véhicule en annees : ");
+			int amortissement = scan.nextInt();
+			Transport transport1 = new Transport(true, taille, kilomAnnee, amortissement);
+			transport.add(transport1);
+		}
+		
+		//Avion
+		System.out.println("Entrer la distance parcourue en avion : ");
+		int distance = scan.nextInt();
+		System.out.println("Entrer la classe (Eco, Business ou Premiere) : ");
+		String c = scan.next();
+		Classe classe = Classe.valueOf(c);
+		
+		Avion avion = new Avion(distance, classe);
+		
+		//Calculs finaux
 		Utilisateur U1 = new Utilisateur(alimentation, bienConso, logement, transport, services, avion);
 		U1.OrdonnerPresenter();
+	
 	}
 
 }

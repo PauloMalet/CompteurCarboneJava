@@ -113,7 +113,7 @@ public class Alimentation extends ConsoCarbone{
 		Alimentation A1 = new Alimentation(1, 0);
 		Alimentation A2 = new Alimentation();
 		A2.settxBoeuf(0.1);
-		A2.settxVege(0.7);
+		A2.settxVege(0.5);
 		System.out.println(A1.impact);
 		System.out.println(A2.impact);
 
